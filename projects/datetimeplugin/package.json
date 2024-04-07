@@ -1,0 +1,14 @@
+{
+  "name": "@eyoeldefare/datetimeplugin",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/cdk": "^17.3.3",
+    "@angular/material": "^17.3.3",
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
+  },
+  "sideEffects": false
+}
