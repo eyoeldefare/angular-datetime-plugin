@@ -56,4 +56,5 @@ To use this plugin, simply follow the example above. Note that the timer uses th
 ## Sample visual examples
 
 Visual examples with different locals
+
 <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_1.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_2.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_3.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_4.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_5.png" width=250>
