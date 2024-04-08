@@ -297,7 +297,6 @@ export class DatetimepluginComponent implements OnInit, AfterViewInit, OnDestroy
 
   ngOnInit(): void {
     const initDateTime = this._timeManager.initDateTime(this._startLocalDatetime, this._minLocalDatetime, this._maxLocalDatetime);
-    console.log(initDateTime)
     //Validate
     this._validateInputs();
 

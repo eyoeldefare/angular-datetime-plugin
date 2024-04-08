@@ -1,6 +1,11 @@
 {
   "name": "angular-mat-plugins",
   "version": "0.0.0",
+  "description": "Angular material datepicker plugin for time picking",
+  "author": "Eyoel D Defare",
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/@eyoelddefare/datetimeplugin",
+  "keywords": ["angular","timepicker", "datepicker", "angularmaterial"],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,6 +25,7 @@
     "@angular/platform-browser": "^17.1.0",
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
+    "@eyoelddefare/datetimeplugin": "^0.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -33,6 +33,10 @@ export class AppComponent {
   maxDAte = new Date(2025, 1, 1, 12, 54)
   startDate = new Date();
   readOnly = false;
+
+  onDateTimePick(date: Date) { 
+    console.log(date);
+  }
 }
 ```
 
@@ -44,17 +48,27 @@ export class AppComponent {
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
 
-        <ngx-datetime-plugin [inputsReadOnly]="readOnly" [minLocalDatetime]="minDAte" [maxLocalDatetime]="maxDAte" [for]="picker1"></ngx-datetime-plugin>
+        <ngx-datetime-plugin 
+          (pickedDate)="onDateTimePick($event)" 
+          [inputsReadOnly]="readOnly" 
+          [minLocalDatetime]="minDAte" 
+          [maxLocalDatetime]="maxDAte" 
+          [for]="picker1">
+        </ngx-datetime-plugin>
 
     </mat-form-field>
 ```
 
 ## Usage
 
-To use this plugin, simply follow the example above. Note that the timer uses the theme provided for the `<mat-datepicker/>`.
+To use this plugin, simply follow the example above. If you've provided a min, max, and start date for the datepicker instance, you also must give the same values for the datetimepickerplugin instance as well to stay consistent with the datepicker instance. 
+
+You can also change the locale, and the format you want the datetime to display using the `TIME_FORMAT, MAT_DATE_LOCALE, DATE_FORMAT`. 
+
+Note that the timer button uses the theme provided for the `<mat-datepicker/>` instance.
 
 ## Sample visual examples
 
 Visual examples with different locals
 
-<img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_1.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_2.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_3.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_4.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_5.png" width=250>
+<img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_1.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_2.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_3.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_4.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_5.png" width=250> <img src="https://raw.githubusercontent.com/eyoeldefare/angular-datetime-plugin/main/src/assets/screen_6.png" width=250>

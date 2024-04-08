@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { DatetimepluginComponent, TIME_FORMAT, DATE_FORMAT } from "datetimeplugin";
+import { DatetimepluginModule, TIME_FORMAT, DATE_FORMAT } from "datetimeplugin";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+// import { DatetimepluginComponent, TIME_FORMAT, DATE_FORMAT  } from "@eyoelddefare/datetimeplugin";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatInputModule, MatNativeDateModule, MatDatepickerModule, DatetimepluginComponent],
+  imports: [MatInputModule, MatNativeDateModule, MatDatepickerModule, DatetimepluginModule],
   providers: [
     //en-150, am-ET, fa, en-US, ko-KR	
     { provide: MAT_DATE_LOCALE, useValue: 'ko-KR' },
@@ -33,7 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
     <mat-datepicker #picker1></mat-datepicker>
-    <ngx-datetime-plugin [inputsReadOnly]="readOnly" [minLocalDatetime]="minDAte" [maxLocalDatetime]="maxDAte" [for]="picker1"></ngx-datetime-plugin>
+    <ngx-datetime-plugin (pickedDate)="onDateTimePick($event)" [inputsReadOnly]="readOnly" [minLocalDatetime]="minDAte" [maxLocalDatetime]="maxDAte" [for]="picker1"></ngx-datetime-plugin>
     </mat-form-field>
   `
 })
@@ -42,4 +43,8 @@ export class AppComponent {
   maxDAte = new Date(2025, 1, 1, 12, 54)
   startDate = new Date();
   readOnly = false;
+
+  onDateTimePick(date: Date) { 
+    console.log(date);
+  }
 }

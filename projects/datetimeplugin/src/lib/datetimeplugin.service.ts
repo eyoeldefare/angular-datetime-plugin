@@ -88,8 +88,7 @@ export const dateFormat: any = {
 export class DateTimeService {
     /**
     * @param _matLocal 
-    * If no local is provided, en-US is used by default not browser defualt.
-    * This token simply extends the LOCAL_ID
+    * If no local is provided, en-US is used by default
     */
     private _is12Hour!: boolean;
     constructor(
@@ -441,6 +440,7 @@ export class DateTimeService {
         const dtf = new Intl.DateTimeFormat(local, { ...this._timeFormats });
         return dtf.formatToParts(date).find(d => d.type === 'dayPeriod') !== undefined;
     }
+    
     private _convert12To24(enDayPeriod: string, hour: number): number {
         if (enDayPeriod === "PM" && hour !== 12) {
             hour = 12 + hour;

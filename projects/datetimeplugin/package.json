@@ -1,6 +1,11 @@
 {
   "name": "@eyoelddefare/datetimeplugin",
   "version": "0.0.2",
+  "description": "Angular material datepicker plugin for time picking",
+  "author": "Eyoel D Defare",
+  "license": "MIT",
+  "homepage": "https://github.com/eyoeldefare/angular-datetime-plugin",
+  "keywords": ["angular","timepicker", "datepicker", "angularmaterial"],
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0",
