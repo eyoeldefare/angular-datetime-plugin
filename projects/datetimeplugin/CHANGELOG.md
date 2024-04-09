@@ -1,3 +1,8 @@
+## [0.0.4] - 4/8/2024.
+* Unsub inputfield subscription upon component destruction
+* Updated typo throughout the service and component files
+* Updated readme file
+
 ## [0.0.3] - 4/8/2024.
 * Add license, keywords, description in the package.json
 * Remove unnecessary codes and provided more examples

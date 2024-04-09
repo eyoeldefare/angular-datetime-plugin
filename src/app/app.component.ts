@@ -34,7 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
     <mat-datepicker #picker1></mat-datepicker>
-    <ngx-datetime-plugin (pickedDate)="onDateTimePick($event)" [inputsReadOnly]="readOnly" [minLocalDatetime]="minDAte" [maxLocalDatetime]="maxDAte" [for]="picker1"></ngx-datetime-plugin>
+    <ngx-datetime-plugin [minLocalDatetime]="minDAte" [maxLocalDatetime]="maxDAte" (pickedDate)="onDateTimePick($event)" [inputsReadOnly]="readOnly" [for]="picker1"></ngx-datetime-plugin>
     </mat-form-field>
   `
 })

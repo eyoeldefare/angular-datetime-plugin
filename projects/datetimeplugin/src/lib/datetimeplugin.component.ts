@@ -301,7 +301,7 @@ export class DatetimepluginComponent implements OnInit, AfterViewInit, OnDestroy
     this._validateInputs();
 
     // Fetch start datetime
-    this.clock = this._timeManager.initTime(initDateTime);
+    this.clock = this._timeManager.initClock(initDateTime);
     this.hours = this._timeManager.initHours(initDateTime);
     this.minutes = this._timeManager.initMinutes(initDateTime);
     this.dayPeriods = this._timeManager.initDayPeriods(initDateTime);
@@ -317,7 +317,7 @@ export class DatetimepluginComponent implements OnInit, AfterViewInit, OnDestroy
     this._portal = new TemplatePortal(this._template, this._viewContainerRef);
     this._datePicker.registerActions(this._portal);
     const dateInput = this._datePicker.datepickerInput as MatDatepickerInput<any>;
-    dateInput.dateChange.asObservable().subscribe(value => {
+    this._unsubInputStream = dateInput.dateChange.asObservable().subscribe(value => {
       //Assuming its already been validated
       this.calanderDate = new Date(value.value);
       this._inputRef = value.targetElement;
@@ -335,6 +335,7 @@ export class DatetimepluginComponent implements OnInit, AfterViewInit, OnDestroy
   private _validateInputs(): void {
     if (this._minLocalDatetime) {
       const dateMinDate = this.datePicker._getMinDate();
+      console.log()
       if (
         !(dateMinDate &&
           this._minLocalDatetime.getFullYear() === dateMinDate.getFullYear() &&

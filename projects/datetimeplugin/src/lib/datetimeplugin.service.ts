@@ -134,37 +134,37 @@ export class DateTimeService {
         }
     }
 
-    public initTime(datetime: Date): Clock {
-        const time: Map<string, Time> = new Map();
+    public initClock(datetime: Date): Clock {
+        const clock: Clock = new Map();
         const dtf = new Intl.DateTimeFormat(this._matLocal, { ...this._timeFormats });
         dtf.formatToParts(datetime).forEach(ftp => {
             if (ftp.type === 'hour') {
-                time.set(ftp.type, {
+                clock.set(ftp.type, {
                     type: ftp.type,
                     value: ftp.value,
                     disabled: false,
                 });
             } else if (ftp.type === 'minute') {
-                time.set(ftp.type, {
+                clock.set(ftp.type, {
                     type: ftp.type,
                     value: ftp.value,
                     disabled: false,
                 });
             } else if (ftp.type === 'dayPeriod') {
-                time.set(ftp.type, {
+                clock.set(ftp.type, {
                     type: ftp.type,
                     value: ftp.value,
                     disabled: false,
                 });
             } else if (ftp.type === 'literal') {
-                time.set(ftp.type + '_' + ftp.value, {
+                clock.set(ftp.type + '_' + ftp.value, {
                     type: ftp.type,
                     value: ftp.value,
                     disabled: false,
                 });
             }
         });
-        return time;
+        return clock;
     }
 
     public showDate(datetime: Date) {
@@ -440,7 +440,7 @@ export class DateTimeService {
         const dtf = new Intl.DateTimeFormat(local, { ...this._timeFormats });
         return dtf.formatToParts(date).find(d => d.type === 'dayPeriod') !== undefined;
     }
-    
+
     private _convert12To24(enDayPeriod: string, hour: number): number {
         if (enDayPeriod === "PM" && hour !== 12) {
             hour = 12 + hour;
@@ -454,9 +454,9 @@ export class DateTimeService {
     }
 }
 
-export class TimeError extends Error { 
+export class TimeError extends Error {
     constructor(type: string, message: string, errorCode?: string, details?: any) {
-        const ec = errorCode ? 'error' : errorCode;
-        super(`${ec}/${type}: ${message} ${details?' ====> '+JSON.stringify(details):''}`);
+        const ec = errorCode ? errorCode : 'error';
+        super(`${ec}/${type}: ${message} ${details ? ' ====> ' + JSON.stringify(details) : ''}`);
     }
 }

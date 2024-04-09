@@ -1,6 +1,6 @@
 # Datetimeplugin
 
-This is a time plugin for the datepicker material component from angular material. It allows you to integrate a time picker.
+This is a time plugin for the datepicker material component from angular material. It allows you to integrate a time picker to select date and time values. Currently doesn't support range selection
 
 # Examples
 
@@ -33,6 +33,10 @@ export class AppComponent {
   maxDAte = new Date(2025, 1, 1, 12, 54)
   startDate = new Date();
   readOnly = false;
+
+  onDateTimePick(date: Date) { 
+    console.log(date);
+  }
 }
 ```
 
@@ -57,11 +61,15 @@ export class AppComponent {
 
 ## Usage
 
-To use this plugin, simply follow the example above. If you've provided a min, max, and start date for the datepicker instance, you also must give the same values for the datetimepickerplugin instance as well to stay consistent with the datepicker instance. 
+To use this plugin, simply follow the example above. If you've provided a min, max, and start date for the `datetimepickerplugin` instance, you also must give the same values for the `datepicker` instance as well to stay consistent with the `datepicker` instance properties. 
 
-You can also change the locale, and the format you want the datetime to display using the `TIME_FORMAT, MAT_DATE_LOCALE, DATE_FORMAT`. 
+You can also change the locale, and the format you want the datetimepickerplugin to display using the `TIME_FORMAT, MAT_DATE_LOCALE, DATE_FORMAT`.
 
-Note that the timer button uses the theme provided for the `<mat-datepicker/>` instance. 
+Note that the `datetimepickerplugin` OK button uses the same theme provided for the `datepicker` instance.
+
+## Date Range
+
+Date range is not currently included. I don't really have any use case for it and if anyone wants to PR or wish to integrate it into their own solution, it should be replicable using this component/service.
 
 ## Sample visual examples
 
