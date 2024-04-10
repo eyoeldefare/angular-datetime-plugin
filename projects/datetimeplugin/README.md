@@ -1,10 +1,12 @@
 # Datetimeplugin
 
-This is a time plugin for the datepicker material component from angular material. It allows you to integrate a time picker to select date and time values. Currently doesn't support range selection
+This is a time plugin for the datepicker material component from angular material. It allows you to integrate a time picker to select date and time values.
 
 # Examples
 
 ``` javascript 
+import { DatetimepluginModule, TIME_FORMAT, DATE_FORMAT  } from "@eyoelddefare/datetimeplugin";
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -61,15 +63,15 @@ export class AppComponent {
 
 ## Usage
 
-To use this plugin, simply follow the example above. If you've provided a min, max, and start date for the `datetimepickerplugin` instance, you also must give the same values for the `datepicker` instance as well to stay consistent with the `datepicker` instance properties. 
+To use this plugin, simply follow the example above. If you've provided a min, max, and start date for the `<ngx-datetime-plugin/>` component, you also must give the same values for the `<mat-datepicker/>` component as well to stay consistent. 
 
-You can also change the locale, and the format you want the datetimepickerplugin to display using the `TIME_FORMAT, MAT_DATE_LOCALE, DATE_FORMAT`.
+You can also change the locale, and the date and time format you want the `<ngx-datetime-plugin/>` component to display using the `TIME_FORMAT, MAT_DATE_LOCALE, DATE_FORMAT` tokens as the example above shows.
 
-Note that the `datetimepickerplugin` OK button uses the same theme provided for the `datepicker` instance.
+Note that the <ngx-datetime-plugin/> "OK" button uses the same theme provided for the `<mat-datepicker/>` component. Therefore if you want to change the button theme, provide a theme to the `<mat-datepicker/>` component. For example, `<mat-datepicker [color]="'primary'"></mat-datepicker>`.
 
 ## Date Range
 
-Date range is not currently included. I don't really have any use case for it and if anyone wants to PR or wish to integrate it into their own solution, it should be replicable using this component/service.
+Date range is not currently supported. I don't really have any use case for it and if anyone wants to PR or wish to integrate it into their own solution, it should be replicable using this same plugin component/service.
 
 ## Sample visual examples
 

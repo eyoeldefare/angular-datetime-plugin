@@ -4,8 +4,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-// import { DatetimepluginComponent, TIME_FORMAT, DATE_FORMAT  } from "@eyoelddefare/datetimeplugin";
-
+// import { DatetimepluginModule, TIME_FORMAT, DATE_FORMAT  } from "@eyoelddefare/datetimeplugin";
 @Component({
   selector: 'app-root',
   standalone: true,

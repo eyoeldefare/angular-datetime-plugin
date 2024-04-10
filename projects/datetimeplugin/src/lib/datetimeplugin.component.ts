@@ -81,6 +81,7 @@ import { MatButtonModule } from '@angular/material/button';
       overflow-x: hidden;
       text-align: center;
       outline: none;
+      background-color: #fff;
     } 
 
     .ngx-timepicker-ul::-webkit-scrollbar {

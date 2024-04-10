@@ -1,3 +1,7 @@
+## [0.0.5] - 4/10/2024
+* Fix transparent background on time dropdown
+* Upgrade documentation
+
 ## [0.0.4] - 4/8/2024.
 * Unsub inputfield subscription upon component destruction
 * Updated typo throughout the service and component files
